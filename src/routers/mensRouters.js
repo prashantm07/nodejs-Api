@@ -17,7 +17,7 @@ router.post("/addMens", async (req, res) => {
 router.get("/allMens", async (req, res) => {
   try {
     const getMens = await MensRanking.find({}).sort({ ranking: 1 });
-    res.send(getMens);
+    res.status(200).send(getMens);
   } catch (error) {
     res.status(401).send(error);
   }
